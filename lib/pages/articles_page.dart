@@ -1,16 +1,18 @@
 
 
-import 'package:course_flutter_improving/pages/about_page.dart';
 import 'package:flutter/material.dart';
 
 class ArticlePage extends StatefulWidget {
-  // const ArticlePage({ Key? key  }) : super(key: key);
-
+  const ArticlePage({ Key key, this.feed }) : super(key: key);
+  final String feed;
   @override
-  _ArticlePageState createState() => _ArticlePageState();
+  _ArticlePageState createState() => _ArticlePageState(this.feed);
 }
 
 class _ArticlePageState extends State<ArticlePage> {
+  final String feed;
+  _ArticlePageState(this.feed);
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,12 +21,9 @@ class _ArticlePageState extends State<ArticlePage> {
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text("Ir para About"),
+          child: Text(this.feed),
           onPressed: (){
-            Navigator.push(context,
-              MaterialPageRoute(builder: (context) => AboutPage()),
-
-            );
+            Navigator.pushNamed(context,'/about');
           },
         ),
       )

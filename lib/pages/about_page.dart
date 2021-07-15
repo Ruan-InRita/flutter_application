@@ -17,12 +17,25 @@ class _AboutPageState extends State<AboutPage> {
         title: Text("Estou em about"),
       ),
       body: Center(
-        child: ElevatedButton(
-          child: Text("Isso é um button"),
-          onPressed: (){
-            print('Continaur novamente ...');
-          },
-        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              child: Text("Voltar para home"),
+              onPressed: (){
+                Navigator.pushNamed(context,'/home');
+              },
+            ),
+            ElevatedButton(
+              child: Text("Voltar"),
+              onPressed: (){
+                Navigator.pop(
+                  context,
+                );
+              },
+            ),
+          ],
+        )
       )
     );
   }

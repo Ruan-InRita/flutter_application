@@ -1,3 +1,5 @@
+import 'package:course_flutter_improving/pages/about_page.dart';
+import 'package:course_flutter_improving/pages/articles_page.dart';
 import 'package:course_flutter_improving/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -11,9 +13,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Feeds Reader',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: HomePage(),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/h',
+      routes: {
+        '/home' : (context) => HomePage(),
+        '/articles':  (context) => ArticlePage(),
+        '/about' : (context) => AboutPage(),
+      },
     );
   }
 }

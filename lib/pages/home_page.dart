@@ -15,17 +15,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Meus feeds"),
+        automaticallyImplyLeading: false,
       ),
-      body: Center(
-        child: ElevatedButton(
-          child: Text("Avançar"),
-          onPressed: (){
-            Navigator.push(context,
-              MaterialPageRoute(builder: (context) => ArticlePage()),
-
-            );
-          },
-        )
+      body: Form(
+        
       )
     );
   }
